@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tobavia News</title>
+        <link rel="icon" href="/static/images/icon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="/static/script.js" defer></script>
+    </head>
+    <body>
+        <div id="loading">
+            <p class="loading-text">
+                Loading<span>.</span><span>.</span><span>.</span>
+            </p>
+        </div>
+        <button id="dark">
+            <p><i>Chế độ tối</i></p>
+        </button>
+        <h1><big><big><i>Tobavia News</i></big></big></h1>
+        <h2><big>Đây nơi bạn có thể đọc tờ báo Tobavia News!</big></h2>
+    
+        <button onclick="location='/'">
+            <h3><big>Trang chủ</big></h3>
+        </button>
+        <button onclick="location='/news'">
+            <h3><big>Tobavia News</big></h3>
+        </button>  
+        <button onclick="location='/page/Bieutrung.html'">
+            <h3><big>Biểu trưng Liên bang</big></h3>
+        </button>
+        <button onclick="location='/page/Cacquanchucchinhphu.html'" >
+            <h3><big>Các Quan chức Chính phủ</big></h3>
+        </button>
+        <button onclick="location='/page/Caccoquanchinhphu.html'">
+            <h3><big>Các Cơ quan Chính phủ</big></h3>
+        </button> 
+        <button onclick="location='/page/Cacbang.html'">
+            <h3><big>Các Bang Tobavia</big></h3>
+        </button>
+        <button onclick="location='/page/Hienphapluat.html'">
+            <h3><big>Hiến pháp và Luật pháp</big></h3>
+        </button>
+        <hr>      
+        {% if news_list %}
+            {% for n in news_list %}
+                <article>
+                    <h2>{{ n.title }}</h2>
+                    <p>{{ n.content }}</p>
+                </article> 
+            {% endfor %}
+        {% else %}
+            <h4><i>Chưa có tin tức nào.</i></h4>
+        {% endif %}
+    </body>
+</html>

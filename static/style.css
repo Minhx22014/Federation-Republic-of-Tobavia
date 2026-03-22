@@ -1,0 +1,96 @@
+p{
+    font-family: Tahoma;
+    
+}
+li{
+    font-family: Tahoma;
+}
+h1{
+    font-family: Tahoma;
+    text-align: center;
+}
+h2{
+    font-family: Tahoma;
+    text-align: center;
+}
+h3{
+    font-family: Tahoma;
+}
+button{
+    border-radius: 5px; background: linear-gradient(skyblue,lightgreen);
+    width: 180px;      
+    height: 60px;      
+    font-size: 8px;   
+}
+body{
+    background: linear-gradient(skyblue,lightgreen);
+    transform: background-color 0.4s ease;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    zoom: 100%;
+}
+body.dark{
+    background: linear-gradient(Black,gray);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    zoom: 100%
+}
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark ul,
+body.dark p {
+    color: white;
+}
+
+body.dark hr {
+    background-color: white;
+    border-color: white;
+}
+body.dark button{
+    background: linear-gradient(black,gray);
+    color:white
+}
+hr{
+    border: none;
+    height: 4px;
+    background-color: black;
+}
+#tin1{
+    width: 500px;
+    height: 300px;
+    border-style: solid;
+    background-color: white;
+    padding: 10px;
+}
+#loading {
+    position: fixed;
+    inset: 0;
+    background: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 9999;
+}
+.loading-text span {
+    display: inline-block;
+    animation: jump 1.2s infinite;
+}
+
+.loading-text span:nth-child(1) {
+    animation-delay: 0s;
+}
+.loading-text span:nth-child(2) {
+    animation-delay: 0.15s;
+}
+.loading-text span:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+@keyframes jump {
+    0%   { transform: translateY(0);   opacity: 0.4; }
+    50%  { transform: translateY(-6px); opacity: 1; }
+    100% { transform: translateY(0);   opacity: 0.4; }
+}
