@@ -14,10 +14,20 @@ ALLOWED_FILES = [
 
 USERNAME = "admin"
 PASSWORD = "123456"
-NEWS_FILE = "news.json"
 
-# Lấy đường dẫn thư mục gốc của dự án
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+@app.route("/page/Chat.html")
+def chat_page():
+    return render_template("Chat.html")
+
+# Trang chủ hoặc trang khác
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 def load_news():
     filepath = os.path.join(BASE_DIR, NEWS_FILE)

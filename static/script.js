@@ -34,3 +34,32 @@ darkBtn.addEventListener("click", () => {
         localStorage.setItem("darkMode", "off");
     }
 });
+
+async function sendMessage() {
+    const user = document.getElementById("username").value;
+    const message = document.getElementById("message").value;
+    if (!user || !message) return;
+
+    await fetch("/chat", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({user, message})
+    });
+
+    document.getElementById("message").value = "";
+    loadMessages();
+}
+
+async function loadMessages() {
+    const res = await fetch("/chat");
+    const data = await res.json();
+    const container = document.getElementById("messages");
+    container.innerHTML = "";
+    data.forEach(msg => {
+        const div = document.createElement("div");
+        div.textContent = `${msg.user}: ${msg.message}`;
+        container.appendChild(div);
+    });
+}
+
+setInterval(loadMessages, 1000); // 1 giây load lại
