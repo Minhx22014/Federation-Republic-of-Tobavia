@@ -30,7 +30,7 @@ body{
     zoom: 100%;
 }
 body.dark{
-    background: linear-gradient(Black,gray);
+    background: linear-gradient(Black,rgb(16, 16, 16));
     background-repeat: no-repeat;
     background-attachment: fixed;
     zoom: 100%
@@ -48,7 +48,7 @@ body.dark hr {
     border-color: white;
 }
 body.dark button{
-    background: linear-gradient(black,gray);
+    background: linear-gradient(black,rgb(16, 16, 16));
     color:white
 }
 hr{
