@@ -43,6 +43,13 @@ body.dark p {
     color: white;
 }
 
+body.dark input,
+body.dark textarea,
+body.dark select,
+body.dark button {
+    color: white;
+}
+
 body.dark hr {
     background-color: white;
     border-color: white;

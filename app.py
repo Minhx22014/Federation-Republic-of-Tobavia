@@ -5,6 +5,9 @@ from flask import Flask, request, redirect, session, render_template
 app = Flask(__name__)
 app.secret_key = "super_secret_key_123"
 
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+NEWS_FILE = "news.json"
+
 # Danh sách file cho phép chỉnh sửa
 ALLOWED_FILES = [
     "index.html", "Bieutrung.html", "Cacbang.html",
@@ -24,10 +27,6 @@ def chat_page():
 @app.route("/")
 def index():
     return render_template("index.html")
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
 
 def load_news():
     filepath = os.path.join(BASE_DIR, NEWS_FILE)
